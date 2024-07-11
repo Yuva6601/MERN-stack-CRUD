@@ -17,6 +17,7 @@ app.use(bodyParser.json())
 app.get('/', (req, res) => {
     res.send("Hello hey")
 })
+
 app.use('/api', workoutRouter)
 
 app.use(errorMiddleware)

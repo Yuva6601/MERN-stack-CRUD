@@ -32,7 +32,7 @@ const Home = () => {
 
     return (
         <div>
-            <Navbar />
+            <Navbar navcontext={"home"} />
             <div className='pt-44 pb-3 w-full text-light-1 px-32'>
                 <div>
                     {

@@ -53,7 +53,7 @@ const Create = () => {
     }
     return (
         <div>
-            <Navbar />
+            <Navbar navcontext={'create'}/>
             <div className='px-32 pt-44'>
                 <form className='w-[70%] mx-auto flex flex-col items-center gap-4 bg-dark-1 shadow shadow-black p-10 rounded-lg scroll-smooth  focus:scroll-auto'
                     onSubmit={handleSubmit}

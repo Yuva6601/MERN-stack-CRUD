@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { assets } from '../assets/assets'
 import { Link } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({ navcontext }) => {
+
+    const [nav, setNav] = useState(navcontext)
 
     return (
         <div className='pt-10 text-light-1 overflow-hidden fixed w-full '>
@@ -15,19 +17,23 @@ const Navbar = () => {
                         alt='logo'
                         className='rounded-full'
                     />
-                    <Link to={'/'}>
-                        <p className='text-4xl font-medium text-light-1 '><span className='text-blue-300'>Workout</span> Buddy</p>
-                    </Link>
+                    <p className='text-4xl font-medium text-light-1 '><span className='text-blue-300'>Workout</span> Buddy</p>
                 </div>
                 <div className='flex gap-7 items-center'>
+                    <Link to={'/'}>
+                        <div onClick={() => setNav("home")} className={nav === 'home'
+                            ? 'border px-4 py-2 rounded-lg bg-white text-blue-400 hover:scale-105'
+                            : 'border px-4 py-2 rounded-lg hover:bg-gray-400 scale-105'}>
+                            Home
+                        </div>
+                    </Link>
                     <Link to={'/create'}>
-                        <div className='border px-4 py-2 rounded-lg hover:bg-gray-400 scale-105'>
+                        <div onClick={() => setNav("create")} className={nav === 'create'
+                            ? 'border px-4 py-2 rounded-lg bg-white text-blue-400 hover:scale-105'
+                            : 'border px-4 py-2 rounded-lg hover:bg-gray-400 scale-105'}>
                             create
                         </div>
                     </Link>
-                    <div className='border cursor-pointer px-4 hover:bg-white hover:scale-105 border-blue-400 text-blue-400 py-2 rounded-lg'>
-                        Login
-                    </div>
                 </div>
             </div>
         </div>
