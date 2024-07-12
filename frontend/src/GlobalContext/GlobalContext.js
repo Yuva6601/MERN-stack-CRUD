@@ -4,7 +4,7 @@ export const GlobalValue = createContext(null)
 
 export const GlobalValueProvider = ({ children }) => {
 
-    const url = `http://localhost:5000`
+    const url = `https://mern-stack-crud-api-two.vercel.app`
 
     const GlobVal = {
         url,
